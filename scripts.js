@@ -34,11 +34,23 @@ form.onsubmit = (event) => {
 
   // Cria um objeto com os detalhes da nova despesa
   const newExpense = {
-      id: new Date().getTime(),
-      expense: expense.value,
-      category_id: category.value,
-      category_name: category.options[category.selectedIndex].text,
-      amount: amount.value,
-      created_at: new Date(),
+    id: new Date().getTime(),
+    expense: expense.value,
+    category_id: category.value,
+    category_name: category.options[category.selectedIndex].text,
+    amount: amount.value,
+    created_at: new Date(),
+  }
+
+  // Chama a função que irá adicionar o item na lista
+  expenseAdd(newExpense);
+
+}
+
+function expenseAdd(newExpense) {
+  try {
+  } catch (error) {
+    alert("Não foi possível atualizar a lista de despesas.");
+    console.log(error)
   }
 }
