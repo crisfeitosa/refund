@@ -148,7 +148,7 @@ function updateTotals() {
     expensesTotal.append(symbolBRL, total);
 
   } catch (error) {
-      alert("Não foi possível atualizar os totais.")
-      console.log(error)
+    alert("Não foi possível atualizar os totais.")
+    console.log(error)
   }
 }
