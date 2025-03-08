@@ -19,7 +19,7 @@ amount.oninput = () => {
 
   // Atualiza o valor do input
   amount.value = formatCurrencyBRL(value)
-}
+};
 
 function formatCurrencyBRL(value) {
   // Formata o valor no padrão BRL (Real Brasileiro)
@@ -30,7 +30,7 @@ function formatCurrencyBRL(value) {
 
   // Retorna o valor formatado
   return value;
-}
+};
 
 // Captura o evento de submit do formulário para obter os valores 
 form.onsubmit = (event) => {
@@ -49,7 +49,7 @@ form.onsubmit = (event) => {
 
   // Chama a função que irá adicionar o item na lista
   expenseAdd(newExpense);
-}
+};
 
 // Adiciona um novo item na lista
 function expenseAdd(newExpense) {
@@ -95,13 +95,16 @@ function expenseAdd(newExpense) {
     // Adiciona o item na lista
     expenseList.append(expenseItem);
 
+    // Limpa o formulário para adicionar um item novo
+    formClear();
+
     // Atualiza os totais
     updateTotals();
   } catch (error) {
     alert("Não foi possível atualizar a lista de despesas.");
     console.log(error)
   }
-}
+};
 
 // Atualiza os totais
 function updateTotals() {
@@ -151,7 +154,7 @@ function updateTotals() {
     alert("Não foi possível atualizar os totais.")
     console.log(error)
   }
-}
+};
 
 // Evento que captura o clique nos itens da lista
 expenseList.addEventListener("click", function (event) {
@@ -168,4 +171,14 @@ expenseList.addEventListener("click", function (event) {
 
   // Atualiza os totais
   updateTotals();
-})
+});
+
+// Limpa os inputs do formulário 
+function formClear() {
+  expense.value = "";
+  category.value = "";
+  amount.value = "";
+
+  // Coloca o foco no input de expense
+  expense.focus();
+}
